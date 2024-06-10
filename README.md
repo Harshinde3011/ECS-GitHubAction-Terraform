@@ -7,6 +7,7 @@ Here I create ECS cluster using terrafrom(IaC), after that I create simple nodej
 
 - AWS account
 - Terraform installed
+- AWS CLI
 - GitHub account
 - Docker installed
 - Node.js installed
@@ -17,6 +18,8 @@ Here I create ECS cluster using terrafrom(IaC), after that I create simple nodej
 - `index.js`: Simple Node.js application.
 - `Dockerfile`: Dockerfile for building the Node.js application.
 - `terraform-ecs-fargate/main.tf`: Terraform configuration file.
+
+![Work directory](./images/work-directory.jpg)
 
 ## Setup Instructions
 
@@ -45,7 +48,7 @@ AWS_SECRET_ACCESS_KEY: Your AWS secret access key.
 ```
 ### 4. GitHub Actions Workflow
 ##### The workflow defined in .github/workflows/deploy.yml will build and push the Docker image to Docker Hub and update the ECS service on each push to the main branch.
-
+![Github Workflow](./images/Github_workflow.jpg)
 ### 5. Access the Application
 ##### After deployment, you can access the application using the public IP of the ECS Fargate task.
 
@@ -56,7 +59,7 @@ AWS_SECRET_ACCESS_KEY: Your AWS secret access key.
 - The public IP address will be listed there. Access the application using http://PUBLIC_IP:3000.
 
 ### 6. Edit Security Group 
-![Security Group](./images/Result.jpg)
+
 ### 
 This README file provides detailed instructions on setting up and running the project. Make sure to replace placeholders like `YOUR_USERNAME`, `YOUR_REPOSITORY`, and `YOUR_DOCKERHUB_USERNAME` with your actual values.
 
