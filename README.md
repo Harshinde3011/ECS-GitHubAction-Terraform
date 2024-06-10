@@ -36,6 +36,12 @@ terraform init
 terraform plan
 terraform apply
 ```
+### Generated ECS Using Terraform
+![ECS Cluster](./images/ecs-cluster.jpg)
+
+### Generated ECS Services of ECS cluster
+![ECS Sevices](./images/ecs-services.jpg)
+
 
 ### 3. Set Up GitHub Secrets
 
@@ -48,8 +54,15 @@ AWS_SECRET_ACCESS_KEY: Your AWS secret access key.
 ```
 ### 4. GitHub Actions Workflow
 ##### The workflow defined in .github/workflows/deploy.yml will build and push the Docker image to Docker Hub and update the ECS service on each push to the main branch.
+![Github Workflow](./images/CD.jpg)
+
+### 5. Edit Security Group (allow 3000)
+![Edit SG](./images/edit-SG.jpg)
+
+#### Successful workflow
 ![Github Workflow](./images/Github_workflow.jpg)
-### 5. Access the Application
+
+### 6. Access the Application
 ##### After deployment, you can access the application using the public IP of the ECS Fargate task.
 
 - Go to the Amazon ECS Console.
@@ -57,11 +70,9 @@ AWS_SECRET_ACCESS_KEY: Your AWS secret access key.
 - Under the Tasks tab, select the running task.
 - Find the ENI ID and click to view details.
 - The public IP address will be listed there. Access the application using http://PUBLIC_IP:3000.
-
-### 6. Edit Security Group 
-
-### 
-This README file provides detailed instructions on setting up and running the project. Make sure to replace placeholders like `YOUR_USERNAME`, `YOUR_REPOSITORY`, and `YOUR_DOCKERHUB_USERNAME` with your actual values.
+ 
+### 7. After completion of all configuration, just browse Instance PublicIP:port (eg. 34.1.45.200:3000)
+![Access Application](./images/Result.jpg)
 
 
 # Conclusion
