@@ -56,7 +56,7 @@ AWS_SECRET_ACCESS_KEY: Your AWS secret access key.
 - The public IP address will be listed there. Access the application using http://PUBLIC_IP:3000.
 
 ### 6. Edit Security Group 
-![Security Group]()
+![Security Group](./images/Result.jpg)
 ### 
 This README file provides detailed instructions on setting up and running the project. Make sure to replace placeholders like `YOUR_USERNAME`, `YOUR_REPOSITORY`, and `YOUR_DOCKERHUB_USERNAME` with your actual values.
 
