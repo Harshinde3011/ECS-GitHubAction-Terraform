@@ -58,8 +58,8 @@ resource "aws_ecs_task_definition" "hello_world_task" {
   family                   = "hello-world-task"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = "1"
-  memory                   = "8"
+  cpu                      = "256"
+  memory                   = "512"
 
   container_definitions = jsonencode([
     {
@@ -99,5 +99,6 @@ output "ecs_service_name" {
 }
 
 output "ecs_service_url" {
-  value = aws_ecs_service.hello_world_service.network_configuration[0].subnets[0]
+  value = element(aws_ecs_service.hello_world_service.network_configuration[*].subnets, 0)
+
 }
